@@ -38,11 +38,11 @@ function toggleMusik() {
     
     if (lagu.paused) {
         lagu.play();
-        ikonMusik.src = 'music-on.svg';
+        ikonMusik.src = 'music-on.png';
         ikonMusik.alt = 'Musik aktif';
     } else {
         lagu.pause();
-        ikonMusik.src = 'music-off.svg';
+        ikonMusik.src = 'music-off.png';
         ikonMusik.alt = 'Musik nonaktif';
     }
 }
