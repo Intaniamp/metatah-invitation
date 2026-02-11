@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metatah - Upacara Manusa Yadnya</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="musik" loop>
+        <source src="Bali Shanti.mp3" type="audio/mp3">
+    </audio>
+    <div id="tombol-musik" onclick="toggleMusik()">🎵</div>
+
+    <section id="cover" class="cover-section">
+        <div class="isian">
+            <h3>Upacara Manusa Yadnya</h3>
+            <h1>Metatah</h1>
+            <h3>29 Agustus 2026</h3>
+            <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <div class="kotak-nama">
+                <h2 id="nama-tamu">Tamu Undangan</h2>
+            </div>
+            <button onclick="bukaUndangan()">Buka Undangan</button>
+        </div>
+    </section>
+
+    <main id="konten" style="display:none;">
+
+        <section class="salam scroll-animate">
+            <img src="https://i.ibb.co/pLz8t9y/om-swastyastu.png" class="logo-om" alt="Om Swastyastu">
+            <h2>Om Swastyastu</h2>
+            <p>Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa, kami berkenan mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya Metatah (Potong Gigi) dari kedua putri kami</p>
+        </section>
+
+        <section class="peserta">
+            <h3>Sane Metatah:</h3>
+            <div class="card scroll-animate">
+                <img src="intania.jpeg" alt="putri 1" class="profile">
+                <h3>I Gusti Agung Ayu Intania Mutiara Putri</h3>
+                <p>Putri Pertama</p>
+            </div>
+
+            <div class="card scroll-animate">
+                <img src="cantika.jpeg" alt="putri 2" class="profile">
+                <h3>I Gusti Agung Ayu Cantika Paramita Putri</h3>
+                <p>Putri Kedua</p>
+            </div>
+
+            <p class="orang-tua scroll-animate">
+                Putri dari pasangan:<br>
+                Bapak I Gusti Ketut Gede Mantara Putra <br>
+                & <br>
+                Ibu Sang Ayu Nyoman Sri Handayani
+            </p>
+        </section>
+
+        <section class="acara scroll-animate">
+            <h2>Waktu & Tempat</h2>
+            <p>Acara akan dilaksanakan pada:</p>
+
+            <div class="kotak-waktu scroll-animate">
+                <h3>Sabtu</h3>
+                <h1>29</h1>
+                <h3>Agustus 2026</h3>
+            </div>
+
+            <p><b>Pukul:</b><br>10.00 WITA - Selesai</p>
+            <p><b>Lokasi:</b><br>Jl. Ir. Ida Bagus Oka Gang Kujang No. 20, Panjer, Denpasar Selatan</p>
+            <a href="https://maps.app.goo.gl/UHgByHXcoDA3qtHA7" target="_blank" class="btn-lokasi">📍 Lihat Google Maps</a>
+        </section>
+
+        <section class="RSVP scroll-animate">
+            <h2>Mohon Doa Restu</h2>
+            <p>Doa restu Bapak/Ibu/Saudara/i merupakan kehormatan bagi kami.</p>
+
+            <form name="submit-to-google-sheet" class="scroll-animate">
+                <input type="text" name="Nama" id="input-nama" placeholder="Nama Lengkap" required>
+                <select name="Kehadiran" required>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Berhalangan Hadir</option>
+                </select>
+                <textarea name="Ucapan" placeholder="Tulis ucapan" rows="3" required></textarea>
+                <button type="submit" class="btn-kirim">Kirim Ucapan</button>
+            </form>
+            
+            <div id="loading" style="display:none;">Mengirim...</div>
+
+            <div class="daftar-ucapan-container scroll-animate">
+                <div id="list-ucapan">
+                    <p style="text-align:center; color: #c9b896;">Memuat ucapan...</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="scroll-animate">
+            <p>Om Santih, Santih, Santih Om</p>
+        </footer>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
