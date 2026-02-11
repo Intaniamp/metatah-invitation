@@ -34,14 +34,16 @@ function bukaUndangan() {
 // 3. TOMBOL MUSIK
 function toggleMusik() {
     const lagu = document.getElementById('musik');
-    const tombolMusik = document.getElementById('tombol-musik');
+    const ikonMusik = document.getElementById('ikon-musik');
     
     if (lagu.paused) {
         lagu.play();
-        tombolMusik.innerHTML = '🎵'; // Icon musik aktif
+        ikonMusik.src = 'music-on.svg';
+        ikonMusik.alt = 'Musik aktif';
     } else {
         lagu.pause();
-        tombolMusik.innerHTML = '🔇'; // Icon mute
+        ikonMusik.src = 'music-off.svg';
+        ikonMusik.alt = 'Musik nonaktif';
     }
 }
 

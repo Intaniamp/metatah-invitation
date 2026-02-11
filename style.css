@@ -491,6 +491,8 @@ footer p {
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
     font-size: 1.5rem;
     transition: all 0.4s ease;
+    padding: 0;
+    outline: none;
 }
 
 #tombol-musik:hover {
@@ -502,6 +504,12 @@ footer p {
 
 #tombol-musik:active {
     transform: scale(0.95) rotate(90deg);
+}
+
+#tombol-musik img {
+    width: 28px;
+    height: 28px;
+    display: block;
 }
 
 /* RESPONSIVE */
