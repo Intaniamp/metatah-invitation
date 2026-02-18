@@ -16,7 +16,7 @@ body {
 h1, h2, h3 { 
     font-family: 'Cinzel', serif; 
     color: #f4e4c1;
-    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+    /* text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); */
 }
 
 h1 {
@@ -83,16 +83,16 @@ h2 {
     font-size: 3rem; 
     margin: 15px 0; 
     color: #ffd700;
-    text-shadow: 
+    /* text-shadow: 
         0 0 20px rgba(255, 215, 0, 0.5),
-        0 0 40px rgba(255, 215, 0, 0.3);
-    animation: glow 2s ease-in-out infinite alternate;
+        0 0 40px rgba(255, 215, 0, 0.3); */
+    /* animation: glow 2s ease-in-out infinite alternate; */
 }
 
-@keyframes glow {
+/* @keyframes glow {
     from { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3); }
     to { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 215, 0, 0.5); }
-}
+} */
 
 .isian h2 { 
     font-size: 1.5rem; 
@@ -121,7 +121,7 @@ h2 {
     padding: 20px;
     margin: 25px 0;
     border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(212, 175, 55, 0.2);
+    /* box-shadow: 0 5px 25px rgba(212, 175, 55, 0.2); */
 }
 
 .kotak-nama h2 {
@@ -191,8 +191,9 @@ section::before {
 /* ANIMASI SCROLL */
 .scroll-animate {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateY(40px);
+    transition: opacity 1s ease-out,
+                transform 1s ease-out;
 }
 
 .scroll-animate.show {
@@ -318,7 +319,7 @@ section::before {
     font-size: 4rem;
     color: #ffd700;
     margin: 10px 0;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    /* text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); */
 }
 
 .kotak-waktu h3 {

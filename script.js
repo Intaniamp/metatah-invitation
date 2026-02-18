@@ -10,9 +10,6 @@ window.addEventListener('load', () => {
         document.getElementById('input-nama').value = nama;
     }
     loadUcapan(); // Panggil fungsi ambil data
-    
-    // Inisialisasi scroll animation
-    initScrollAnimation();
 });
 
 // 2. FUNGSI BUKA UNDANGAN
@@ -28,7 +25,7 @@ function bukaUndangan() {
     // Trigger scroll animation setelah dibuka
     setTimeout(() => {
         initScrollAnimation();
-    }, 100);
+    }, 300);
 }
 
 // 3. TOMBOL MUSIK
@@ -102,33 +99,24 @@ function initScrollAnimation() {
     
     const elementInView = (el, offset = 100) => {
         const elementTop = el.getBoundingClientRect().top;
+        const elementBottom = el.getBoundingClientRect().bottom;
         return (
-            elementTop <= 
-            (window.innerHeight || document.documentElement.clientHeight) - offset
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset &&
+            elementBottom >= offset
         );
-    };
-    
-    const displayScrollElement = (element) => {
-        element.classList.add('show');
-    };
-    
-    const hideScrollElement = (element) => {
-        element.classList.remove('show');
     };
     
     const handleScrollAnimation = () => {
         scrollElements.forEach((el) => {
             if (elementInView(el, 100)) {
-                displayScrollElement(el);
+                el.classList.add('show');
             }
         });
     };
     
-    // Jalankan sekali saat load
-    handleScrollAnimation();
-    
     // Jalankan saat scroll
-    window.addEventListener('scroll', () => {
-        handleScrollAnimation();
-    });
+    window.addEventListener('scroll', handleScrollAnimation);
+    
+    // Jalankan sekali setelah sedikit delay untuk efek pertama kali
+    setTimeout(handleScrollAnimation, 200);
 }
