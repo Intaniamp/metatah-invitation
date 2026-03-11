@@ -97,18 +97,22 @@ function loadUcapan() {
 function initScrollAnimation() {
     const scrollElements = document.querySelectorAll('.scroll-animate');
     
-    const elementInView = (el, offset = 100) => {
+    const elementInView = (el, offset = 40) => {
         const elementTop = el.getBoundingClientRect().top;
-        const elementBottom = el.getBoundingClientRect().bottom;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        // If user is near the bottom of page, reveal remaining elements too.
+        const nearPageBottom = window.scrollY + viewportHeight >= document.documentElement.scrollHeight - 10;
+
         return (
-            elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset &&
-            elementBottom >= offset
+            nearPageBottom ||
+            elementTop <= viewportHeight - offset
         );
     };
     
     const handleScrollAnimation = () => {
         scrollElements.forEach((el) => {
-            if (elementInView(el, 100)) {
+            if (elementInView(el, 40)) {
                 el.classList.add('show');
             }
         });
