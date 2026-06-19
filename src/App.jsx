@@ -42,7 +42,7 @@ function App() {
         <Rsvp initialName={guestName} />
         
         <footer>
-          <p className="scroll-animate">Om Santih, Santih, Santih Om</p>
+          <p>Om Santih, Santih, Santih Om</p>
         </footer>
       </main>
     </>
