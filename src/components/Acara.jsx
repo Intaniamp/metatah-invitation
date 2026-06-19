@@ -7,8 +7,8 @@ export default function Acara() {
             <p className="scroll-animate">Acara akan dilaksanakan pada:</p>
 
             <div className="kotak-waktu">
-                <h3 className="scroll-animate">Sabtu</h3>
-                <h1 className="scroll-animate">29</h1>
+                <h3 className="scroll-animate">Minggu</h3>
+                <h1 className="scroll-animate">30</h1>
                 <h3 className="scroll-animate">Agustus 2026</h3>
             </div>
 

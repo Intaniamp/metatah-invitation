@@ -1,3 +1,66 @@
+
+:root {
+  --bg-gradient-top: #1a1410;
+  --bg-gradient-mid: #2d1f17;
+  --text-gold: #d4af37;
+  --text-gold-light: #f4e4c1;
+  --text-gold-bright: #ffd700;
+  --text-muted: #c9b896;
+  --text-gold-dark: #b8860b;
+  --bg-overlay-dark: rgba(0, 0, 0, 0.4);
+  --bg-overlay-light: rgba(0, 0, 0, 0.3);
+  --bg-overlay-darker: rgba(0, 0, 0, 0.5);
+  --card-bg-gradient-1: rgba(212, 175, 55, 0.1);
+  --card-bg-gradient-2: rgba(184, 134, 11, 0.1);
+  --card-bg-gradient-1-hover: rgba(212, 175, 55, 0.15);
+  --card-bg-gradient-2-hover: rgba(184, 134, 11, 0.15);
+  --border-gold-light: rgba(212, 175, 55, 0.3);
+  --border-gold-mid: rgba(212, 175, 55, 0.2);
+  --border-gold-dark: rgba(212, 175, 55, 0.05);
+  --shadow-color-hover: rgba(212, 175, 55, 0.4);
+  --shadow-color-hover-2: rgba(212, 175, 55, 0.5);
+  --shadow-color-hover-3: rgba(212, 175, 55, 0.6);
+  --shadow-color-hover-4: rgba(212, 175, 55, 0.03);
+  --shadow-color-hover-5: rgba(212, 175, 55, 0.08);
+  --white-shadow: rgba(255, 255, 255, 0.3);
+  --placeholder-color: rgba(201, 184, 150, 0.6);
+  --cover-bg-1: rgba(20, 15, 10, 0.85);
+  --cover-bg-2: rgba(30, 20, 15, 0.9);
+  --bright-shadow: rgba(255, 215, 0, 0.6);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-gradient-top: #fdfbf7;
+    --bg-gradient-mid: #f4eadd;
+    --text-gold: #b8860b;
+    --text-gold-light: #2d1f17;
+    --text-gold-bright: #8b6508;
+    --text-muted: #5c4033;
+    --text-gold-dark: #b8860b;
+    --bg-overlay-dark: rgba(255, 255, 255, 0.7);
+    --bg-overlay-light: rgba(255, 255, 255, 0.6);
+    --bg-overlay-darker: rgba(255, 255, 255, 0.8);
+    --card-bg-gradient-1: rgba(255, 255, 255, 0.6);
+    --card-bg-gradient-2: rgba(255, 248, 220, 0.6);
+    --card-bg-gradient-1-hover: rgba(255, 255, 255, 0.8);
+    --card-bg-gradient-2-hover: rgba(255, 248, 220, 0.8);
+    --border-gold-light: rgba(184, 134, 11, 0.3);
+    --border-gold-mid: rgba(184, 134, 11, 0.2);
+    --border-gold-dark: rgba(184, 134, 11, 0.05);
+    --shadow-color-hover: rgba(184, 134, 11, 0.15);
+    --shadow-color-hover-2: rgba(184, 134, 11, 0.2);
+    --shadow-color-hover-3: rgba(184, 134, 11, 0.3);
+    --shadow-color-hover-4: rgba(184, 134, 11, 0.03);
+    --shadow-color-hover-5: rgba(184, 134, 11, 0.08);
+    --white-shadow: rgba(0, 0, 0, 0.05);
+    --placeholder-color: rgba(92, 64, 51, 0.6);
+    --cover-bg-1: rgba(253, 251, 247, 0.85);
+    --cover-bg-2: rgba(244, 234, 221, 0.9);
+    --bright-shadow: rgba(184, 134, 11, 0.3);
+  }
+}
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -7,16 +70,16 @@
 body { 
     font-family: 'Poppins', sans-serif; 
     text-align: center; 
-    background: linear-gradient(135deg, #1a1410 0%, #2d1f17 50%, #1a1410 100%);
-    color: #d4af37; 
+    background: linear-gradient(135deg, var(--bg-gradient-top) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-top) 100%);
+    color: var(--text-gold); 
     overflow-x: hidden;
 }
 
 /* Font Judul Khas Bali/Klasik */
 h1, h2, h3 { 
     font-family: 'Cinzel', serif; 
-    color: #f4e4c1;
-    /* text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); */
+    color: var(--text-gold-light);
+    /* text-shadow: 0 2px 10px var(--border-gold-light); */
 }
 
 h1 {
@@ -37,12 +100,12 @@ h2 {
     width: 100%; 
     height: 100vh;
     background: 
-        linear-gradient(rgba(20, 15, 10, 0.85), rgba(30, 20, 15, 0.9)), 
+        linear-gradient(var(--cover-bg-1), var(--cover-bg-2)), 
         url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1200') center/cover;
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    color: #f4e4c1; 
+    color: var(--text-gold-light); 
     z-index: 999; 
     transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -60,8 +123,8 @@ h2 {
             0deg,
             transparent,
             transparent 2px,
-            rgba(212, 175, 55, 0.03) 2px,
-            rgba(212, 175, 55, 0.03) 4px
+            var(--shadow-color-hover-4) 2px,
+            var(--shadow-color-hover-4) 4px
         );
     pointer-events: none;
 }
@@ -70,19 +133,19 @@ h2 {
     position: relative;
     z-index: 1;
     padding: 40px;
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--bg-overlay-dark);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(212, 175, 55, 0.3);
+    border: 2px solid var(--border-gold-light);
     border-radius: 20px;
     box-shadow: 
-        0 0 40px rgba(212, 175, 55, 0.2),
-        inset 0 0 60px rgba(212, 175, 55, 0.05);
+        0 0 40px var(--border-gold-mid),
+        inset 0 0 60px var(--border-gold-dark);
 }
 
 .isian h1 { 
     font-size: 3rem; 
     margin: 15px 0; 
-    color: #ffd700;
+    color: var(--text-gold-bright);
     /* text-shadow: 
         0 0 20px rgba(255, 215, 0, 0.5),
         0 0 40px rgba(255, 215, 0, 0.3); */
@@ -98,12 +161,12 @@ h2 {
     font-size: 1.5rem; 
     margin: 10px 0; 
     font-weight: 600; 
-    color: #f4e4c1;
+    color: var(--text-gold-light);
 }
 
 .isian h3 {
     font-size: 1.2rem;
-    color: #d4af37;
+    color: var(--text-gold);
     font-weight: 400;
     margin: 10px 0;
 }
@@ -112,20 +175,20 @@ h2 {
     font-size: 1rem; 
     margin: 15px 0; 
     font-weight: 300; 
-    color: #c9b896;
+    color: var(--text-muted);
 }
 
 .kotak-nama {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(184, 134, 11, 0.2));
-    border: 2px solid #d4af37;
+    background: linear-gradient(135deg, var(--border-gold-mid), rgba(184, 134, 11, 0.2));
+    border: 2px solid var(--text-gold);
     padding: 20px;
     margin: 25px 0;
     border-radius: 10px;
-    /* box-shadow: 0 5px 25px rgba(212, 175, 55, 0.2); */
+    /* box-shadow: 0 5px 25px var(--border-gold-mid); */
 }
 
 .kotak-nama h2 {
-    color: #ffd700;
+    color: var(--text-gold-bright);
     margin: 0;
     font-size: 1.8rem;
 }
@@ -133,9 +196,9 @@ h2 {
 /* TOMBOL */
 button, .btn-lokasi, .btn-kirim { 
     padding: 15px 40px; 
-    background: linear-gradient(135deg, #d4af37, #b8860b);
-    color: #1a1410; 
-    border: 2px solid #f4e4c1; 
+    background: linear-gradient(135deg, var(--text-gold), var(--text-gold-dark));
+    color: var(--bg-gradient-top); 
+    border: 2px solid var(--text-gold-light); 
     border-radius: 50px;
     cursor: pointer; 
     font-family: 'Cinzel', serif;
@@ -148,17 +211,17 @@ button, .btn-lokasi, .btn-kirim {
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 
-        0 5px 20px rgba(212, 175, 55, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 5px 20px var(--shadow-color-hover),
+        inset 0 1px 0 var(--white-shadow);
 }
 
 button:hover, .btn-lokasi:hover, .btn-kirim:hover {
     transform: translateY(-3px);
     box-shadow: 
-        0 10px 30px rgba(212, 175, 55, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    background: linear-gradient(135deg, #ffd700, #d4af37);
-    border-color: #ffd700;
+        0 10px 30px var(--shadow-color-hover-3),
+        inset 0 1px 0 var(--white-shadow);
+    background: linear-gradient(135deg, var(--text-gold-bright), var(--text-gold));
+    border-color: var(--text-gold-bright);
 }
 
 button:active, .btn-lokasi:active, .btn-kirim:active {
@@ -167,13 +230,13 @@ button:active, .btn-lokasi:active, .btn-kirim:active {
 
 /* KONTEN UTAMA */
 main {
-    background: linear-gradient(180deg, #1a1410 0%, #2d1f17 50%, #1a1410 100%);
+    background: linear-gradient(180deg, var(--bg-gradient-top) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-top) 100%);
     position: relative;
 }
 
 section { 
     padding: 80px 20px; 
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid var(--border-gold-mid);
     position: relative;
 }
 
@@ -185,7 +248,7 @@ section::before {
     transform: translateX(-50%);
     width: 100px;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    background: linear-gradient(90deg, transparent, var(--text-gold), transparent);
 }
 
 /* ANIMASI SCROLL */
@@ -203,44 +266,44 @@ section::before {
 
 /* SALAM SECTION */
 .salam {
-    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, var(--border-gold-dark) 0%, transparent 70%);
 }
 
 .logo-om { 
     width: 80px; 
     margin-bottom: 20px; 
-    filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.4));
+    filter: drop-shadow(0 5px 15px var(--shadow-color-hover));
 }
 
 .salam p {
     max-width: 700px;
     margin: 20px auto;
     line-height: 1.8;
-    color: #c9b896;
+    color: var(--text-muted);
     font-size: 1.1rem;
 }
 
 /* PESERTA SECTION */
 .peserta { 
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--bg-overlay-light);
     padding: 80px 20px;
 }
 
 .card { 
     margin: 40px auto;
     max-width: 400px;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(184, 134, 11, 0.1));
+    background: linear-gradient(135deg, var(--card-bg-gradient-1), var(--card-bg-gradient-2));
     padding: 40px 30px;
     border-radius: 20px;
-    border: 2px solid rgba(212, 175, 55, 0.3);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--border-gold-light);
+    box-shadow: 0 10px 40px var(--bg-overlay-darker);
     transition: all 0.5s ease;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 50px rgba(212, 175, 55, 0.3);
-    border-color: #d4af37;
+    box-shadow: 0 15px 50px var(--border-gold-light);
+    border-color: var(--text-gold);
 }
 
 .profile {
@@ -248,30 +311,30 @@ section::before {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #d4af37;
+    border: 4px solid var(--text-gold);
     padding: 5px;
     margin-bottom: 20px;
     box-shadow: 
-        0 0 30px rgba(212, 175, 55, 0.4),
-        inset 0 0 20px rgba(0, 0, 0, 0.3);
+        0 0 30px var(--shadow-color-hover),
+        inset 0 0 20px var(--bg-overlay-light);
     transition: all 0.5s ease;
 }
 
 .card:hover .profile {
     transform: scale(1.05);
     box-shadow: 
-        0 0 40px rgba(255, 215, 0, 0.6),
-        inset 0 0 20px rgba(0, 0, 0, 0.3);
+        0 0 40px var(--bright-shadow),
+        inset 0 0 20px var(--bg-overlay-light);
 }
 
 .card h3 {
     font-size: 1.4rem;
     margin: 15px 0;
-    color: #ffd700;
+    color: var(--text-gold-bright);
 }
 
 .card p {
-    color: #c9b896;
+    color: var(--text-muted);
     font-size: 1rem;
     font-style: italic;
 }
@@ -279,57 +342,57 @@ section::before {
 .orang-tua { 
     margin-top: 50px; 
     font-size: 1.1rem; 
-    color: #c9b896; 
-    border-top: 2px solid rgba(212, 175, 55, 0.3); 
+    color: var(--text-muted); 
+    border-top: 2px solid var(--border-gold-light); 
     padding-top: 30px;
     line-height: 1.8;
 }
 
 /* ACARA SECTION */
 .acara {
-    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, var(--shadow-color-hover-5) 0%, transparent 70%);
 }
 
 .acara p {
-    color: #c9b896;
+    color: var(--text-muted);
     font-size: 1.1rem;
     margin: 15px 0;
     line-height: 1.8;
 }
 
 .acara p b {
-    color: #ffd700;
+    color: var(--text-gold-bright);
     font-size: 1.2rem;
 }
 
 /* KOTAK WAKTU */
 .kotak-waktu {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(184, 134, 11, 0.15));
-    border: 3px solid #d4af37;
+    background: linear-gradient(135deg, var(--card-bg-gradient-1-hover), var(--card-bg-gradient-2-hover));
+    border: 3px solid var(--text-gold);
     padding: 30px;
     margin: 30px auto;
     width: 250px;
     border-radius: 20px;
     box-shadow: 
-        0 10px 40px rgba(212, 175, 55, 0.3),
-        inset 0 0 30px rgba(212, 175, 55, 0.1);
+        0 10px 40px var(--border-gold-light),
+        inset 0 0 30px var(--card-bg-gradient-1);
 }
 
 .kotak-waktu h1 {
     font-size: 4rem;
-    color: #ffd700;
+    color: var(--text-gold-bright);
     margin: 10px 0;
     /* text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); */
 }
 
 .kotak-waktu h3 {
     font-size: 1.5rem;
-    color: #f4e4c1;
+    color: var(--text-gold-light);
 }
 
 /* RSVP SECTION */
 .RSVP {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--bg-overlay-light);
 }
 
 .RSVP h2 {
@@ -337,7 +400,7 @@ section::before {
 }
 
 .RSVP > p {
-    color: #c9b896;
+    color: var(--text-muted);
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
@@ -353,10 +416,10 @@ form {
 
 input, select, textarea {
     padding: 15px 20px;
-    background: rgba(212, 175, 55, 0.1);
-    border: 2px solid rgba(212, 175, 55, 0.3);
+    background: var(--card-bg-gradient-1);
+    border: 2px solid var(--border-gold-light);
     border-radius: 10px;
-    color: #f4e4c1;
+    color: var(--text-gold-light);
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -364,13 +427,13 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #d4af37;
-    background: rgba(212, 175, 55, 0.15);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    border-color: var(--text-gold);
+    background: var(--card-bg-gradient-1-hover);
+    box-shadow: 0 0 20px var(--border-gold-mid);
 }
 
 input::placeholder, textarea::placeholder {
-    color: rgba(201, 184, 150, 0.6);
+    color: var(--placeholder-color);
 }
 
 select {
@@ -378,12 +441,12 @@ select {
 }
 
 option {
-    background: #1a1410;
-    color: #f4e4c1;
+    background: var(--bg-gradient-top);
+    color: var(--text-gold-light);
 }
 
 #loading {
-    color: #d4af37;
+    color: var(--text-gold);
     font-style: italic;
     margin: 20px 0;
 }
@@ -394,9 +457,9 @@ option {
     text-align: left;
     max-height: 500px; 
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--bg-overlay-light);
     padding: 20px; 
-    border: 2px solid rgba(212, 175, 55, 0.3);
+    border: 2px solid var(--border-gold-light);
     border-radius: 15px;
     max-width: 700px;
     margin-left: auto;
@@ -408,33 +471,33 @@ option {
 }
 
 .daftar-ucapan-container::-webkit-scrollbar-track {
-    background: rgba(212, 175, 55, 0.1);
+    background: var(--card-bg-gradient-1);
     border-radius: 10px;
 }
 
 .daftar-ucapan-container::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #d4af37, #b8860b);
+    background: linear-gradient(180deg, var(--text-gold), var(--text-gold-dark));
     border-radius: 10px;
 }
 
 .kartu-ucapan {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(184, 134, 11, 0.1));
+    background: linear-gradient(135deg, var(--card-bg-gradient-1-hover), var(--card-bg-gradient-2));
     padding: 20px; 
     margin-bottom: 15px;
-    border-left: 4px solid #d4af37;
+    border-left: 4px solid var(--text-gold);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px var(--bg-overlay-light);
     transition: all 0.3s ease;
 }
 
 .kartu-ucapan:hover {
     transform: translateX(5px);
     border-left-width: 6px;
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 20px var(--border-gold-mid);
 }
 
 .kartu-ucapan h4 {
-    color: #ffd700;
+    color: var(--text-gold-bright);
     margin-bottom: 10px;
     font-size: 1.1rem;
     display: flex;
@@ -443,14 +506,14 @@ option {
 }
 
 .kartu-ucapan p {
-    color: #c9b896;
+    color: var(--text-muted);
     line-height: 1.6;
     font-size: 0.95rem;
 }
 
 .badge {
-    background: linear-gradient(135deg, #d4af37, #b8860b);
-    color: #1a1410;
+    background: linear-gradient(135deg, var(--text-gold), var(--text-gold-dark));
+    color: var(--bg-gradient-top);
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -460,13 +523,13 @@ option {
 
 /* FOOTER */
 footer {
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--bg-overlay-darker);
     padding: 40px 20px;
-    border-top: 2px solid rgba(212, 175, 55, 0.3);
+    border-top: 2px solid var(--border-gold-light);
 }
 
 footer p {
-    color: #d4af37;
+    color: var(--text-gold);
     font-size: 1.2rem;
     font-family: 'Cinzel', serif;
 }
@@ -478,18 +541,18 @@ footer p {
     right: 30px; 
     width: 60px; 
     height: 60px; 
-    background: linear-gradient(135deg, #d4af37, #b8860b);
-    color: #1a1410; 
+    background: linear-gradient(135deg, var(--text-gold), var(--text-gold-dark));
+    color: var(--bg-gradient-top); 
     border-radius: 50%; 
     display: none; 
     justify-content: center; 
     align-items: center; 
     cursor: pointer; 
     z-index: 1000; 
-    border: 3px solid #f4e4c1;
+    border: 3px solid var(--text-gold-light);
     box-shadow: 
-        0 5px 20px rgba(212, 175, 55, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 5px 20px var(--shadow-color-hover-2),
+        inset 0 1px 0 var(--white-shadow);
     font-size: 1.5rem;
     transition: all 0.4s ease;
     padding: 0;
@@ -499,8 +562,8 @@ footer p {
 #tombol-musik:hover {
     transform: scale(1.1);
     box-shadow: 
-        0 10px 30px rgba(255, 215, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        0 10px 30px var(--bright-shadow),
+        inset 0 1px 0 var(--white-shadow);
 }
 
 #tombol-musik:active {
@@ -537,6 +600,6 @@ footer p {
     display: block;
     margin: 40px auto 0;
     font-size: 2rem;
-    color: #d4af37;
+    color: var(--text-gold);
     opacity: 0.5;
 }
