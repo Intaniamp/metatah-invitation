@@ -18,6 +18,7 @@
   --color-music-bg: rgba(74, 54, 38, 0.85);
   --shadow-primary: 0 6px 16px rgba(74, 54, 38, 0.25);
   --shadow-primary-hover: 0 8px 20px rgba(74, 54, 38, 0.3);
+  --shadow-card: 0 10px 24px rgba(74, 54, 38, 0.12);
 
   /* ---- Type tokens ---- */
   --font-script: "Alex Brush", cursive;
@@ -124,6 +125,7 @@ button {
   border-radius: 4px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-card);
   padding: 44px 28px;
 }
 
@@ -191,8 +193,8 @@ button {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #1c1712;
-    --color-card-bg: rgba(42, 35, 27, 0.72);
-    --color-card-border: rgba(187, 153, 112, 0.3);
+    --color-card-bg: rgba(34, 28, 22, 0.78);
+    --color-card-border: rgba(200, 163, 119, 0.34);
     --color-ink: #f2e6d4;
     --color-ink-soft: #d3bea2;
     --color-gold: #d2a36d;
@@ -206,6 +208,7 @@ button {
     --color-music-bg: rgba(178, 141, 102, 0.9);
     --shadow-primary: 0 10px 20px rgba(0, 0, 0, 0.36);
     --shadow-primary-hover: 0 12px 24px rgba(0, 0, 0, 0.42);
+    --shadow-card: 0 14px 32px rgba(0, 0, 0, 0.42);
   }
 
   body {
@@ -214,17 +217,23 @@ button {
   }
 
   .paper-bg {
+    background-image: linear-gradient(rgba(16, 12, 9, 0.36), rgba(16, 12, 9, 0.36)), url("/watercolor-bg.jpg");
     background-blend-mode: multiply;
     background-color: #221a13;
   }
 
   .corner-ornament {
-    opacity: 0.86;
-    filter: brightness(0.88) saturate(0.95);
+    opacity: 0.9;
+    filter: brightness(0.94) saturate(1.02);
   }
 
   .eyebrow-balinese img,
   .divider-motif img {
-    filter: brightness(0.9) contrast(1.05);
+    filter: brightness(0.96) contrast(1.08);
+  }
+
+  .frosted-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 }
