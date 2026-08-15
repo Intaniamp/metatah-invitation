@@ -14,8 +14,8 @@ export default function Peserta({ entries = [] }) {
   if (entries.length === 0) {
     return (
       <section className="peserta paper-bg">
-        <span className="corner-ornament top-left" />
-        <span className="corner-ornament bottom-right" />
+        <span className="corner-ornament top-right" />
+        <span className="corner-ornament bottom-left" />
         <div className="peserta__card frosted-card">
           <h2 className="peserta__title">Ucapan &amp; Doa</h2>
           <p className="peserta__empty">Jadilah yang pertama mengirimkan ucapan.</p>
@@ -26,8 +26,8 @@ export default function Peserta({ entries = [] }) {
 
   return (
     <section className="peserta paper-bg">
-      <span className="corner-ornament top-left" />
-      <span className="corner-ornament bottom-right" />
+      <span className="corner-ornament top-right" />
+      <span className="corner-ornament bottom-left" />
       <div className="peserta__card frosted-card">
         <h2 className="peserta__title">Ucapan &amp; Doa</h2>
 
