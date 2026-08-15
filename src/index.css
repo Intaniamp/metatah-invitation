@@ -12,6 +12,12 @@
   --color-button: #7c6650;
   --color-button-text: #fbf3e7;
   --color-input-border: #cbb99e;
+  --color-input-bg: rgba(255, 255, 255, 0.55);
+  --color-placeholder: #9c8b76;
+  --color-select-arrow: #6b5442;
+  --color-music-bg: rgba(74, 54, 38, 0.85);
+  --shadow-primary: 0 6px 16px rgba(74, 54, 38, 0.25);
+  --shadow-primary-hover: 0 8px 20px rgba(74, 54, 38, 0.3);
 
   /* ---- Type tokens ---- */
   --font-script: "Alex Brush", cursive;
@@ -39,6 +45,7 @@ body {
   color: var(--color-ink);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+  color-scheme: light;
 }
 
 #root {
@@ -170,13 +177,54 @@ button {
   font-family: var(--font-body);
   font-size: 16px;
   letter-spacing: 0.3px;
-  box-shadow: 0 6px 16px rgba(74, 54, 38, 0.25);
+  box-shadow: var(--shadow-primary);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(74, 54, 38, 0.3);
+  box-shadow: var(--shadow-primary-hover);
 }
 .btn-primary:active {
   transform: translateY(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1c1712;
+    --color-card-bg: rgba(42, 35, 27, 0.72);
+    --color-card-border: rgba(187, 153, 112, 0.3);
+    --color-ink: #f2e6d4;
+    --color-ink-soft: #d3bea2;
+    --color-gold: #d2a36d;
+    --color-gold-deep: #e3bc8b;
+    --color-button: #b28d66;
+    --color-button-text: #1f1710;
+    --color-input-border: #8a6e4f;
+    --color-input-bg: rgba(30, 24, 18, 0.78);
+    --color-placeholder: #a99378;
+    --color-select-arrow: #d3bea2;
+    --color-music-bg: rgba(178, 141, 102, 0.9);
+    --shadow-primary: 0 10px 20px rgba(0, 0, 0, 0.36);
+    --shadow-primary-hover: 0 12px 24px rgba(0, 0, 0, 0.42);
+  }
+
+  body {
+    color-scheme: dark;
+    background: radial-gradient(circle at 20% 10%, #2a221a 0%, #18120e 60%, #120d0a 100%);
+  }
+
+  .paper-bg {
+    background-blend-mode: multiply;
+    background-color: #221a13;
+  }
+
+  .corner-ornament {
+    opacity: 0.86;
+    filter: brightness(0.88) saturate(0.95);
+  }
+
+  .eyebrow-balinese img,
+  .divider-motif img {
+    filter: brightness(0.9) contrast(1.05);
+  }
 }

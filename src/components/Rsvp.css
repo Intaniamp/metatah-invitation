@@ -38,7 +38,7 @@
   font-family: var(--font-body);
   font-size: 15px;
   color: var(--color-ink);
-  background: rgba(255, 255, 255, 0.55);
+  background: var(--color-input-bg);
   border: 1px solid var(--color-input-border);
   border-radius: 4px;
   padding: 13px 14px;
@@ -46,7 +46,7 @@
   transition: border-color 0.2s ease;
 }
 .rsvp__input::placeholder {
-  color: #9c8b76;
+  color: var(--color-placeholder);
 }
 .rsvp__input:focus {
   border-color: var(--color-gold);
@@ -57,6 +57,12 @@
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%236b5442' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
   background-repeat: no-repeat;
   background-position: right 14px center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .rsvp__select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%23d3bea2' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  }
 }
 
 .rsvp__textarea {
