@@ -1,22 +1,55 @@
-import React from 'react';
+import './Acara.css'
 
-export default function Acara() {
-    return (
-        <section className="acara">
-            <h2 className="scroll-animate">Waktu &amp; Tempat</h2>
-            <p className="scroll-animate">Acara akan dilaksanakan pada:</p>
+const events = [
+  {
+    name: 'Mepandes',
+    date: 'Sabtu, 29 Agustus 2026',
+    time: 'Pukul 08.00 - 11.00 WITA',
+  },
+  {
+    name: 'Resepsi',
+    date: 'Minggu, 30 Agustus 2026',
+    time: 'Pukul 10.00 - Selesai',
+  },
+]
 
-            <div className="kotak-waktu">
-                <h3 className="scroll-animate">Minggu</h3>
-                <h1 className="scroll-animate">30</h1>
-                <h3 className="scroll-animate">Agustus 2026</h3>
-            </div>
+export default function Acara({ mapsUrl = 'https://maps.app.goo.gl/TK8FLQmSMXJgwp7i7' }) {
+  return (
+    <section className="acara paper-bg">
+      <span className="corner-ornament top-right" />
+      <span className="corner-ornament bottom-left" />
 
-            <p className="scroll-animate"><b>Pukul:</b><br />10.00 WITA - Selesai</p>
-            <p className="scroll-animate"><b>Lokasi:</b><br />Jl. Ir. Ida Bagus Oka Gang Kujang No. 20, Panjer, Denpasar Selatan</p>
-            <a href="https://maps.app.goo.gl/UHgByHXcoDA3qtHA7" target="_blank" rel="noreferrer" className="btn-lokasi">
-                <span className="scroll-animate">📍 Lihat Google Maps</span>
-            </a>
-        </section>
-    );
+      <div className="acara__card frosted-card">
+        <h2 className="acara__title">Upacara Manusa Yadnya</h2>
+
+        {events.map((event, i) => (
+          <div className="acara__event" key={event.name}>
+            <h3 className="acara__event-name">{event.name}</h3>
+            <p className="acara__event-date">{event.date}</p>
+            <p className="acara__event-time">{event.time}</p>
+            {i === 0 && <p className="acara__ampersand">&amp;</p>}
+          </div>
+        ))}
+
+        <a className="btn-primary acara__button" href={mapsUrl} target="_blank" rel="noreferrer">
+          <PinIcon />
+          Lihat Lokasi
+        </a>
+      </div>
+    </section>
+  )
+}
+
+function PinIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12 22s7-7.58 7-13a7 7 0 10-14 0c0 5.42 7 13 7 13z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="9" r="2.4" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  )
 }

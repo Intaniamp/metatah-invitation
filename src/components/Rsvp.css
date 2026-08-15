@@ -1,0 +1,91 @@
+.rsvp {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 64px 24px;
+}
+
+.rsvp__card {
+  width: 100%;
+  text-align: center;
+}
+
+.rsvp__title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0 0 14px;
+}
+
+.rsvp__subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  margin: 0 0 28px;
+}
+
+.rsvp__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.rsvp__input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-ink);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--color-input-border);
+  border-radius: 4px;
+  padding: 13px 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.rsvp__input::placeholder {
+  color: #9c8b76;
+}
+.rsvp__input:focus {
+  border-color: var(--color-gold);
+}
+
+.rsvp__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%236b5442' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.rsvp__textarea {
+  resize: vertical;
+  min-height: 90px;
+  font-family: var(--font-body);
+}
+
+.rsvp__submit {
+  align-self: center;
+  margin-top: 6px;
+  min-width: 140px;
+}
+.rsvp__submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.rsvp__thanks {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  margin: 0 0 20px;
+}
+
+.rsvp__closing {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

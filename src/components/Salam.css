@@ -1,0 +1,177 @@
+.salam {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 44px 20px 64px;
+  overflow: hidden;
+  animation: paperFade 0.85s ease-out both;
+}
+
+.salam__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: min(100%, 420px);
+  /* margin: 0 auto; */
+  animation: floatIn 0.9s ease-out both;
+}
+
+.salam__greeting,
+.salam__intro,
+.salam__person,
+.divider-motif {
+  width: 100%;
+}
+
+.salam__greeting {
+  margin: 0 0 18px;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  color: var(--color-ink);
+}
+
+.salam__intro {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.5vw, 1rem);
+  line-height: 1.7;
+  color: var(--color-ink);
+  max-width: 350px;
+  margin: 0 auto;
+  letter-spacing: 0.01em;
+}
+
+.divider-motif {
+  margin: 18px 0 20px;
+  color: var(--color-gold-deep);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  animation: shimmer 2.8s ease-in-out infinite alternate;
+}
+
+.salam__person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  /* animation: riseIn 0.7s ease-out both; */
+}
+
+.salam__person:nth-of-type(2) {
+  animation-delay: 0.12s;
+}
+
+.salam__name {
+  font-family: var(--font-person);
+  font-size: clamp(2.7rem, 5.4vw, 4.3rem);
+  font-weight: 400;
+  color: var(--color-ink);
+  margin: 0 0 10px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.salam__fullname {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 1.9vw, 1.1rem);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 4px;
+  line-height: 1.5;
+}
+
+.salam__role {
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1.5vw, 0.8rem);
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.salam__ampersand {
+  font-family: var(--font-person);
+  font-size: clamp(2.7rem, 5.2vw, 3.9rem);
+  color: var(--color-gold-deep);
+  margin: 12px 0 8px;
+  line-height: 1;
+}
+
+@keyframes paperFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heartBeat {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.98);
+  }
+}
+
+@media (max-width: 420px) {
+  .salam {
+    padding: 26px 14px 52px;
+  }
+
+  .salam__content {
+    width: min(100%, 310px);
+  }
+
+  .salam__intro {
+    max-width: 290px;
+  }
+}

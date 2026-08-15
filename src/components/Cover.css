@@ -1,0 +1,64 @@
+.cover {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  animation: paperFade 0.85s ease-out both;
+}
+
+.cover__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover__eyebrow {
+  font-family: var(--font-script);
+  font-size: 26px;
+  color: var(--color-ink);
+  margin: 0 0 36px;
+  line-height: 1.3;
+  max-width: 300px;
+}
+
+.cover__emblem {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 36px;
+}
+
+.cover__title {
+  font-family: var(--font-script);
+  font-size: 44px;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin: 0 0 28px;
+}
+
+.cover__to {
+  margin-bottom: 32px;
+}
+
+.cover__to-label {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-ink-soft);
+  margin: 0 0 6px;
+}
+
+.cover__to-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.cover__button {
+  margin-top: 4px;
+}

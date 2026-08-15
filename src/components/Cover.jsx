@@ -1,25 +1,35 @@
-import React from 'react';
+import './Cover.css'
 
-export default function Cover({ guestName, onOpen, isOpened }) {
-    return (
-        <section 
-            id="cover" 
-            className="cover-section"
-            style={{
-                transform: isOpened ? 'translateY(-100%)' : 'translateY(0)',
-                transition: 'transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1)'
-            }}
-        >
-            <div className="isian">
-                <h3>Upacara Manusa Yadnya</h3>
-                <h1>Metatah</h1>
-                <h3>29 Agustus 2026</h3>
-                <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
-                <div className="kotak-nama">
-                    <h2 id="nama-tamu">{guestName || 'Tamu Undangan'}</h2>
-                </div>
-                <button onClick={onOpen}>Buka Undangan</button>
-            </div>
-        </section>
-    );
+export default function Cover({ guestName, onOpen }) {
+  return (
+    <section className="cover paper-bg">
+
+      <div className="cover__content">
+        <p className="cover__eyebrow">Undangan Upacara Manusa Yadnya</p>
+
+        <img className="cover__emblem" src="/om.png" alt="Simbol Om" />
+
+        <h1 className="cover__title">Mepandes</h1>
+
+        <div className="cover__to">
+          <p className="cover__to-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+          <p className="cover__to-name">{guestName}</p>
+        </div>
+
+        <button className="btn-primary cover__button" onClick={onOpen}>
+          <EnvelopeIcon />
+          Buka Undangan
+        </button>
+      </div>
+    </section>
+  )
+}
+
+function EnvelopeIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2.5" y="4.5" width="19" height="15" rx="2" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M3 6l9 7 9-7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
 }

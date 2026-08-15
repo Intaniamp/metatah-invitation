@@ -1,0 +1,58 @@
+.acara {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 64px 24px;
+}
+
+.acara__card {
+  width: 100%;
+  text-align: center;
+}
+
+.acara__title {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0 0 32px;
+}
+
+.acara__event {
+  margin-bottom: 8px;
+}
+
+.acara__event-name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0 0 10px;
+}
+
+.acara__event-date {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 4px;
+}
+
+.acara__event-time {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-ink-soft);
+  margin: 0;
+}
+
+.acara__ampersand {
+  font-family: var(--font-script);
+  font-size: 40px;
+  color: var(--color-gold-deep);
+  margin: 22px 0 4px;
+}
+
+.acara__button {
+  margin-top: 32px;
+  text-decoration: none;
+}

@@ -1,27 +1,48 @@
-import React from 'react';
+import './Peserta.css'
 
-export default function Peserta() {
+const HADIR_LABEL = {
+  hadir: 'Hadir',
+  tidak_hadir: 'Tidak Hadir',
+  ragu: 'Masih Ragu',
+}
+
+/**
+ * Shows the wall of ucapan/doa left by guests through Rsvp.
+ * `entries` is expected as [{ nama, hadir, ucapan }, ...], newest first.
+ */
+export default function Peserta({ entries = [] }) {
+  if (entries.length === 0) {
     return (
-        <section className="peserta">
-            <h2 className="scroll-animate">Sane Metatah:</h2>
-            <div className="card">
-                <img src="/intania.jpeg" alt="putri 1" className="profile" />
-                <h3 className="scroll-animate">I Gusti Agung Ayu Intania Mutiara Putri</h3>
-                <p className="scroll-animate">Putri Pertama</p>
-            </div>
+      <section className="peserta paper-bg">
+        <span className="corner-ornament top-left" />
+        <span className="corner-ornament bottom-right" />
+        <div className="peserta__card frosted-card">
+          <h2 className="peserta__title">Ucapan &amp; Doa</h2>
+          <p className="peserta__empty">Jadilah yang pertama mengirimkan ucapan.</p>
+        </div>
+      </section>
+    )
+  }
 
-            <div className="card">
-                <img src="/cantika.jpeg" alt="putri 2" className="profile" />
-                <h3 className="scroll-animate">I Gusti Agung Ayu Cantika Paramita Putri</h3>
-                <p className="scroll-animate">Putri Kedua</p>
-            </div>
+  return (
+    <section className="peserta paper-bg">
+      <span className="corner-ornament top-left" />
+      <span className="corner-ornament bottom-right" />
+      <div className="peserta__card frosted-card">
+        <h2 className="peserta__title">Ucapan &amp; Doa</h2>
 
-            <p className="orang-tua scroll-animate">
-                Putri dari pasangan:<br />
-                Bapak I Gusti Ketut Gede Mantara Putra <br />
-                &amp; <br />
-                Ibu Sang Ayu Nyoman Sri Handayani
-            </p>
-        </section>
-    );
+        <ul className="peserta__list">
+          {entries.map((entry, i) => (
+            <li className="peserta__item" key={`${entry.nama}-${i}`}>
+              <div className="peserta__item-head">
+                <span className="peserta__item-name">{entry.nama}</span>
+                <span className="peserta__item-status">{HADIR_LABEL[entry.hadir] ?? entry.hadir}</span>
+              </div>
+              {entry.ucapan && <p className="peserta__item-text">{entry.ucapan}</p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
 }
