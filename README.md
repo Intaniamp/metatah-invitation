@@ -46,7 +46,7 @@ Masih perlu kamu tambahkan sendiri:
 | File | Dipakai di | Keterangan |
 | --- | --- | --- |
 | `favicon.svg` | tab browser | |
-| `intania.jpeg`, `cantika.jpeg` | (opsional, belum dipakai di UI) | disiapkan bila nanti mau tampilkan foto |
+| `gambar.jpeg` | (opsional, belum dipakai di UI) | disiapkan bila nanti mau tampilkan foto |
 | `music-on.png`, `music-off.png` | MusicPlayer | ikon toggle musik |
 | `Bali Shanti.mp3` | MusicPlayer | musik latar, diputar loop |
 
