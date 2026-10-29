@@ -1,4 +1,4 @@
-# Undangan Mepandes - Intania & Cantika
+# Undangan Mepandes
 
 Undangan digital React + Vite, mengikuti 4 layar desain: Cover, Salam, Acara, dan Rsvp.
 
